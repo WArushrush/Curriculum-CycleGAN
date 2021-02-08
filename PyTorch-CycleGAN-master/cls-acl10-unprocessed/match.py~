@@ -1,0 +1,72 @@
+#!/usr/bin/python
+#
+# Copyright 2010 Peter Prettenhofer
+
+"""A template parsing module for the multilingual sentiment corpus. 
+
+This module contains a template parsing routine for the multilingual sentiment corpus. The parsing routine is implemented using 'xml.etree.cElementTree.iterparse'. Modify/extend this module for your needs. 
+
+  parse(itemfile): Parse the itemfile using 'iterparse', invoking 'processItem' for each review (aka item).
+  processItem(elem): Process the review - implement custom code here.  
+"""
+
+__authors__ = [
+  '"Peter Prettenhofer" <peter.prettenhofer@gmail.com>',
+]
+
+import sys
+import os
+import gzip
+from xml.etree.cElementTree import iterparse,tostring
+import traceback
+
+def parse(itemfile):
+    itemc = 0
+    try:
+	for event, elem in iterparse(itemfile):
+	    if elem.tag == "item":
+		try:
+		    processItem(elem)
+		    itemc += 1
+		except Exception, e:
+		    print >> sys.stderr, "Ignoring item: %s" % e
+		elem.clear()
+    except SyntaxError, se:
+	print >> sys.stderr, se
+    return itemc
+
+
+def processItem(item):
+    """ Process a review.
+    Implement custom code here. Use 'item.find('tagname').text' to access the properties of a review. 
+    """
+    
+    category = item.find("category").text
+    rating = float(item.find("rating").text)
+    asin = item.find("asin").text
+    date = item.find("date").text
+    text = item.find("text").text
+    summary = item.find("summary").text
+    return rating
+    
+
+def main(argv):
+    if len(argv) < 1:
+        print "Usage: parse.py [input]"
+        sys.exit(-2)
+    fname = argv[0]
+    if fname.endswith(".gz"):
+	fd = gzip.open(fname)
+    else:
+        fd = open(fname)
+    itemfile = fd
+    itemc = 0
+    try:
+        itemc = parse(itemfile)
+    finally:
+        itemfile.close()
+        print "%d items parsed. " % itemc
+    
+if __name__ == "__main__":
+    main(sys.argv[1:])
+

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" autoUpload="Always" serverName="国内服务器">
+    <serverData>
+      <paths name="Copy of project-level server '国内服务器'">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/tmp/pycharm_project_622" local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="schzhao">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="国内服务器">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/root/xiaoyang" local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+    <option name="myAutoUpload" value="ALWAYS" />
+  </component>
+</project>

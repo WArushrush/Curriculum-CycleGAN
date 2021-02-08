@@ -1,0 +1,51 @@
+Number of documents
+===================
+
+Test documents:
+---------------
+    2000 de/bücher/test.processed
+    2000 de/dvd/test.processed
+    2000 de/musik/test.processed
+    2000 en/books/test.processed
+    2000 en/dvd/test.processed
+    2000 en/music/test.processed
+    2000 fr/dvd/test.processed
+    2000 fr/livres/test.processed
+    2000 fr/musique/test.processed
+    2000 jp/books/test.processed
+    2000 jp/dvd/test.processed
+    2000 jp/music/test.processed
+   24000 total
+
+Training documents:
+-------------------
+    2000 de/bücher/train.processed
+    2000 de/dvd/train.processed
+    2000 de/musik/train.processed
+    2000 en/books/train.processed
+    2000 en/dvd/train.processed
+    2000 en/music/train.processed
+    2000 fr/dvd/train.processed
+    2000 fr/livres/train.processed
+    2000 fr/musique/train.processed
+    2000 jp/books/train.processed
+    2000 jp/dvd/train.processed
+    2000 jp/music/train.processed
+   24000 total
+
+Unlabeled documents:
+--------------------
+   165470 de/bücher/unlabeled.processed
+    91516 de/dvd/unlabeled.processed
+    60392 de/musik/unlabeled.processed
+    50000 en/books/unlabeled.processed
+    30000 en/dvd/unlabeled.processed
+    25220 en/music/unlabeled.processed
+     9358 fr/dvd/unlabeled.processed
+    32870 fr/livres/unlabeled.processed
+    15940 fr/musique/unlabeled.processed
+   169780 jp/books/unlabeled.processed
+    68326 jp/dvd/unlabeled.processed
+    55892 jp/music/unlabeled.processed
+   774764 total
+
